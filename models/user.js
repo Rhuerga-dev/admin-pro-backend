@@ -5,22 +5,22 @@ const UserSchema = Schema({
 
     name: {
         type: String,
-        require: true
+        required: true
     },
     email: {
         type: String,
-        require: true
+        required: true
     },
     password: {
         type: String,
-        require: true
+        required: true
     },
     img: {
         type: String,
     },
     role: {
         type: String,
-        require: true,
+        required: true,
         default: 'USER_ROLE'
     },
     google: {
@@ -32,7 +32,7 @@ const UserSchema = Schema({
 
 UserSchema.method('toJSON', function (){
    const {__v, _id, password, ...object} =  this.toObject();
-object.uid = _id;
+   object.uid = _id;
    return object;
 })
 
